@@ -1,0 +1,22 @@
+#Swap two numbers without using a temp variable
+x = int(input())  #Assume 10
+y = int(input())  #Assume 5
+print("Original value of x is", x)
+print("Original value of y is", y)
+x = x + y
+
+y = x - y
+
+x = x - y
+
+print("Value of x after swap is", x)
+print("Value of y after swap is", y)
+
+#Find reverse of a number
+n = int(input())
+print(n)
+reverse = 0
+while (n > 0):
+    reverse = reverse*10 + n % 10
+    n = n/10
+print(reverse)

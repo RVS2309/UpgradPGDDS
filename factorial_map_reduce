@@ -1,0 +1,42 @@
+from functools import reduce
+temp = (32, 37, 43, 100, 0, 25)
+Fahrenheit = list(map(lambda x : (float(9)/5)*x + 32, temp))
+Celsius = list(map(lambda x : (float(5)/9) * (x-32), temp))
+print(Fahrenheit)
+print(Celsius)
+
+a = [1, 2, 3, 4]
+b = [17, 12, 11, 10]
+c = [-1, -4, 5, 9]
+
+d = list(map(lambda x,y,z : x+y+z, a,b,c))
+print(d)
+
+e = reduce(lambda x,y : x+y, d)
+print(e)
+
+f = reduce(lambda a, b : a if (a<b) else b, d)
+print(f)
+
+g = reduce(lambda x, y : x + y, range(1, 101))
+print(g)
+
+print("Please enter the number for which factorial needs to be calculated :")
+n = int(input())
+if n == 0:
+    print(1)
+else:
+    factorial = reduce(lambda x, y : x*y, range(1, n+1))
+   
+print(factorial)
+
+def factorial2(num):
+    if num > 1:
+        return num * factorial2(num - 1)
+    elif num == 1:
+        print(num)
+    else:
+        print(1)
+
+fact = factorial2(0)
+print(fact)
